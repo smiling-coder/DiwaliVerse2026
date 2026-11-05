@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DiwaliVerse 2026 — Illuminate Your World</title>
+<meta name="description" content="Illuminate Your World. Celebrate the Light. An interactive Diwali experience.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="gold">
+<canvas id="fx" aria-hidden="true"></canvas>
+
+<section id="intro" aria-label="Opening">
+  <canvas id="diya3d" tabindex="0" aria-label="Interactive 3D diya. Drag or use arrow keys to rotate. Press Space to light or extinguish."></canvas>
+  <div class="introtxt">
+    <h1>DiwaliVerse <span>2026</span></h1>
+    <p class="tag">Illuminate Your World. Celebrate the Light.</p>
+    <p class="quote">A little light can brighten the universe.</p>
+    <label class="who">For my beloved <input id="who" maxlength="30" placeholder="Their name (optional)" autocomplete="off"></label>
+    <button id="enter" class="btn">Enter Celebration</button>
+    <small>Drag to rotate · tap the diya to light or extinguish</small>
+  </div>
+</section>
+
+<header id="top" hidden>
+  <b>🪔 DiwaliVerse</b>
+  <div class="ctl">
+    <button class="th" data-t="gold" aria-label="Royal Gold theme">Gold</button>
+    <button class="th" data-t="rose" aria-label="Lotus Rose theme">Rose</button>
+    <button class="th" data-t="blue" aria-label="Peacock Blue theme">Blue</button>
+    <button id="snd" aria-pressed="false">🔇 Sound off</button>
+  </div>
+</header>
+
+<main id="site" hidden>
+  <section class="hero2">
+    <h2>Happy Diwali,<br><em class="nm">my beloved</em></h2>
+    <p>Every diya I light tonight carries your name. Tap anywhere for fireworks.</p>
+    <button id="boom" class="btn">✨ Launch fireworks</button>
+  </section>
+
+  <section id="rangoli">
+    <h2>Rangoli Creator</h2>
+    <canvas id="rg" width="600" height="600" aria-label="Rangoli pattern"></canvas>
+    <div class="row">
+      <label>Petals <input id="rp" type="range" min="4" max="24" value="12"></label>
+      <label>Complexity <input id="rl" type="range" min="2" max="7" value="4"></label>
+      <label>Palette <select id="rc"><option>Marigold</option><option>Lotus</option><option>Peacock</option><option>Festive</option></select></label>
+      <button id="rr" class="btn s">🎲 Random</button>
+      <button id="rd" class="btn s">⬇ PNG</button>
+    </div>
+  </section>
+
+  <section id="greet">
+    <h2>Greeting Studio</h2>
+    <canvas id="card" width="1080" height="1350" aria-label="Greeting card preview"></canvas>
+    <div class="col">
+      <label>Recipient <input id="cname" maxlength="30"></label>
+      <label>Message <textarea id="cmsg" rows="4" maxlength="200">You are the light that makes every Diwali glow brighter. Wherever I am, my heart lights a diya for you.</textarea></label>
+      <label>Card theme <select id="ctheme"><option value="gold">Royal Gold</option><option value="rose">Lotus Rose</option><option value="blue">Peacock Blue</option></select></label>
+      <button id="cd" class="btn s">⬇ Download card PNG</button>
+    </div>
+  </section>
+
+  <section id="lantern">
+    <h2>Lantern Release</h2>
+    <p>Write a wish and send it into the night sky.</p>
+    <div class="row"><input id="wish" maxlength="40" placeholder="My wish…" aria-label="Your wish"><button id="rel" class="btn s">🏮 Release lantern</button></div>
+  </section>
+
+  <section id="quiz">
+    <h2>Diwali Quiz</h2>
+    <div id="qbox" aria-live="polite"></div>
+  </section>
+
+  <section id="world">
+    <h2>One Light, Many Homes</h2>
+    <svg viewBox="0 0 400 200" role="img" aria-label="Decorative glowing map of connected lights around the world">
+      <defs><radialGradient id="g"><stop offset="0" stop-color="var(--a)"/><stop offset="1" stop-color="var(--a)" stop-opacity="0"/></radialGradient></defs>
+      <g class="lines" stroke="var(--a)" stroke-opacity=".35" fill="none"><path d="M70 70Q140 20 215 85T330 110"/><path d="M215 85Q250 40 300 60"/><path d="M215 85Q235 140 280 150"/><path d="M70 70Q120 120 200 130"/></g>
+      <g id="dots"></g>
+    </svg>
+    <p>Diwali is celebrated by communities across India, Nepal, Sri Lanka, Singapore, Malaysia, Mauritius, Fiji, the UK, the USA and beyond. Different homes, one shared idea: light over darkness. This map is purely decorative — no live visitor data.</p>
+  </section>
+
+  <section id="finale">
+    <h2>Happy Diwali, <em class="nm">my beloved</em> 🪔</h2>
+    <div class="diyas"><i></i><i></i><i></i><i></i><i></i></div>
+    <p>May your life be as bright as a thousand diyas, and may I be there to see every one of them glow.</p>
+    <div class="row"><button id="replay" class="btn">🎆 Replay celebration</button><button id="link" class="btn s">🔗 Copy personal link</button></div>
+    <small id="linkmsg" role="status"></small>
+  </section>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
